@@ -1,0 +1,58 @@
+{% extends 'main/main-home.html' %}
+
+{% block nav_h %}
+<div class="col-lg-10">
+    <div class="header__nav">
+        <nav class="header__menu mobile-menu">
+            <ul>
+                <li><a href="{% url 'home' %}"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Home</a></li>
+                <li class="active"><a href="{% url 'user_login' %}"><i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;User</a></li>
+                <li><a href="{% url 'about' %}"><i class="fa fa-video-camera" aria-hidden="true"></i>&nbsp;About us</a></li>
+                <li><a href="{% url 'contact' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock nav_h %}
+
+{% block content %}
+<center><h1 class="my-5 text-white" style="font-family: fantasy;">OTP Verification</h1></center>
+<main>
+    <div class="container">
+      <div class="row d-flex justify-content-center py-vh-5 pb-0">
+        <div class="col-12 col-lg-10 col-xl-8 card h-blur">
+            <div class="post-area pd-top-75 pd-bottom-50 " id="trending" >
+                <center>
+                    <form action="" method="post">
+                {% csrf_token %}
+                    <div class="col-8">
+                    <div class="my-5">
+                      <label for="exampleInputEmail1" class="form-label">OTP</label>
+                      <input type="number" required name='otp' class="form-control mb-4 form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    
+                        <button type="submit" class="btn btn-success btn-xl mb-4">Submit</button>
+
+                    </div>
+                </form>
+                <br>
+                <h4 class='mb-3' style="color: rgb(31, 30, 30); font-family: fantasy;">Don't have a Account?</h4>
+             <a href="{% url 'user_register' %}" class="btn btn-primary">Register</a>
+             <br>
+                <br>
+                <a href="{% url 'forget_password' %}" class="btn btn-danger">Forgot Password?</a>
+            </center>
+            <br>
+            </div>
+    </div>
+      </div>
+      <br>
+    <br>
+    <br>
+    <br>
+    
+    </div>
+    
+  </main>
+ 
+  {% endblock content %}

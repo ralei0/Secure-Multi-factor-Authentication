@@ -1,0 +1,107 @@
+{% extends 'user/user-base.html' %}
+{% load static %}
+{% block nav_b %}
+<div class="col-lg-10">
+    <div class="header__nav">
+        <nav class="header__menu mobile-menu">
+            <ul>
+                <li><a href="{% url 'base' %}"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Dashboard</a></li>
+                <li class="active"><a href="{% url 'myprofile' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;My Profile</a></li>                
+                <li><a href="{% url 'log_out' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</a></li>                
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock nav_b %}
+
+{% block content %}
+<style>
+    #custom-button {
+        padding: 10px;
+        color: white;
+        background-color: #009578;
+        border: 1px solid #000;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      #custom-button:hover {
+        background-color: #00b28f;
+      }
+      
+      #custom-text {
+        margin-left: 10px;
+        font-family: sans-serif;
+        color: #aaa;
+      }
+</style>
+
+<center><h1 class="mt-5 text-white" style="font-family: fantasy;">Update Graphical Password Locations</h1></center>
+<section class="signup spad">
+    <div class="container card h-blur">
+        <form method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <h4>Graphical Password Image</h4>
+            <div class="row ">
+                <div class="col-8 mt-4">
+                    <img src="media/{{i.gpa }}"  width="450px" height="450px" id="image">
+                    <p style="color: white;">Select 4 Slots to verify your image</p>
+        
+                </div>
+                 <div class="col-4 mt-4">
+                     <div class="div" >
+                         <label class="label">Cursor Point</label>
+                        <input type="text" name="point5" class="form-control" placeholder="112.232" id="point5"  >
+                    </div>
+                     <div class="div">
+                        <label class="label">  Slot 1 </label>
+                         <input type="text" name="point1" class="form-control" placeholder="120.564" id="point1"  required>
+                     </div>
+                    <div class="div">
+                        <label class="label">Slot 2</label>
+                        <input type="text" name="point2" class="form-control" placeholder="124.453" id="point2"  required>
+                     </div>
+                     <div class="div">
+                         <label class="label">Slot 3</label>
+                        <input type="text" name="point3" class="form-control"  placeholder="140.231" id="point3"  required>
+                    </div>
+                     <div class="div">
+                        <label class="label">Slot 4</label>
+                        <input type="text" name="point4" class="form-control" placeholder="136.432" id="point4"  required>
+        
+                    </div>
+                    <br>
+                     <div class="div">
+                        <button type="submit" class="btn btn-primary"   >Submit</button>
+                    </div>
+                </div>
+            </div>
+         </form>
+                <br>
+          </div>
+</section>
+<script>
+    const image = document.getElementById("image");
+    const inputs = [
+        document.getElementById("point1"),
+        document.getElementById("point2"),
+        document.getElementById("point3"),
+        document.getElementById("point4"),
+    ];
+    const initialInput = document.getElementById("point5");
+    const coordinates = [];
+    image.addEventListener("mousemove",(event) => {
+        const x =event.offsetX;
+        const y = event.offsetY;
+        initialInput.value = `${x},${y}`;
+    });
+    image.addEventListener("click", (event) => {
+        const x = event.offsetX;
+        const y = event.offsetY;
+        coordinates.push({x,y});
+        if (coordinates.length <= 4){
+            inputs[coordinates.length - 1].value = `${x},${y}`;
+        }
+    });
+</script>
+  {% endblock content %}

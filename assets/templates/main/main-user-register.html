@@ -1,0 +1,98 @@
+{% extends 'main/main-home.html' %}
+
+{% block nav_h %}
+<div class="col-lg-10">
+    <div class="header__nav">
+        <nav class="header__menu mobile-menu">
+            <ul>
+                <li><a href="{% url 'home' %}"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Home</a></li>
+                <li class="active"><a href="{% url 'user_login' %}"><i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;User</a></li>
+                <li><a href="{% url 'about' %}"><i class="fa fa-video-camera" aria-hidden="true"></i>&nbsp;About us</a></li>
+                <li><a href="{% url 'contact' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock nav_h %}
+
+{% block content %}
+<style>
+    .h-blur {
+        background-color: rgba(255, 255, 255, 0.341);  
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
+       }
+</style>
+<center><h1 class="my-5 text-white" style="font-family: fantasy;">Register</h1></center>
+<main>
+    <div class="container">
+      <div class="row d-flex justify-content-center py-vh-5 pb-0">
+        <div class="col-12 col-lg-10 col-xl-8 card h-blur">
+            <div class="post-area pd-top-75 pd-bottom-50 " id="trending" >
+                <center>
+             <form class="row mt-5" name='myform'  onsubmit='return validate();'  method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <h4 for="exampleInputEmail1" class=" form-label">Full Name</h4>
+                            <input type="text" required name="fullname" class="form-control mb-4 form-control-lg bg-gray-800 border-dark"  aria-describedby="emailHelp">
+                          </div>
+                          <div class="mb-3">
+                            <h4 for="exampleInputEmail1" class=" form-label">Email address</h4>
+                            <input type="email" required name="email" class="form-control mb-4 form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          </div>
+                          
+                          <div class="mb-3">
+                            <h4 for="exampleInputEmail1" class=" form-label">Contact</h4>
+                            <input type="text" required name="contact" class="form-control mb-4 form-control-lg bg-gray-800 border-dark"  aria-describedby="emailHelp">
+                          </div>
+                          
+                    
+                    </div>
+                    <div class="col-6">
+                      <div class="mb-3">
+                        <h4 for="exampleInputEmail1" class=" form-label">City</h4>
+                        <input type="text" required name="city" class="form-control mb-4 form-control-lg bg-gray-800 border-dark"  aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <h4 for="exampleInputPassword1" class=" form-label">Profile Pic</h4>
+                        <input type="file" name="pic" required class="form-control form-control-lg bg-gray-800 border-dark">
+                      </div>
+                      <div class="mb-3">
+                        <h4 for="exampleInputPassword1" class=" form-label">Graphical Password Pic</h4>
+                        <input type="file" name="gpa" required class="form-control form-control-lg bg-gray-800 border-dark">
+                      </div>
+                    
+                    <div class="mb-3 mt-4">
+                      <h4 for="exampleInputPassword1" class=" form-label">Password</h4>
+                      <input type="password" title="Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required name="password" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <center><button type="submit" class="btn btn-success btn-xl mb-4">Submit</button></center>
+                </div>
+                        
+
+                </form>
+                <h4 style="color: rgb(31, 30, 30);font-family: fantasy;">Alraedy have a Account?</h4>
+                <br>
+                <a href="{% url 'user_login' %}" class="btn btn-primary">Login</a>
+                <br>
+                <br>
+                <a href="{% url 'forget_password' %}" class="btn btn-danger">Forgot Password?</a>
+                
+
+            </center>
+            <br>
+        </div>
+      </div>
+    </div>
+            <br>
+            <br>
+            <br>
+            <br>
+    </div>
+    
+  </main>
+ 
+  {% endblock content %}

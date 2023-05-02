@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Anime Template">
+        <meta name="keywords" content="Anime, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Anime | Template</title>
+
+        <!-- Google Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="{% static 'user/css/bootstrap.min.css' %}"
+            type="text/css">
+        <link rel="stylesheet" href="{% static 'user/css/font-awesome.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'user/css/elegant-icons.css' %}"
+            type="text/css">
+        <link rel="stylesheet" href="{% static 'user/css/plyr.css' %}"
+            type="text/css">
+        <link rel="stylesheet" href="{% static 'user/css/nice-select.css' %}"
+            type="text/css">
+        <link rel="stylesheet" href="{% static 'user/css/owl.carousel.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'user/css/slicknav.min.css' %}"
+            type="text/css">
+        <link rel="stylesheet" href="{% static 'user/css/style.css' %}"
+            type="text/css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link rel="stylesheet" href="{% static 'user/css/radio.css' %}">
+
+        
+        <style>   
+        .image-preview-container {
+            width: 75%;
+            margin: 0 auto;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+        
+        .image-preview-container img {
+            width: 100%;
+            display: none;
+            margin-bottom: 30px;
+        }
+        .image-preview-container input {
+            display: none;
+        }
+        
+        .image-preview-container label {
+            display: block;
+            width: 45%;
+            height: 45px;
+            margin-left: 25%;
+            text-align: center;
+            background: #8338ec;
+            color: #fff;
+            font-size: 15px;
+            text-transform: Uppercase;
+            font-weight: 400;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <style>
+        .h-blur {
+            background-color: rgba(255, 255, 255, 0.341);  
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            }
+    </style>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <!-- <div style="background: linear-gradient(to bottom, #061246, #1c0960);"> -->
+        <div>
+
+        <!-- Page Preloder -->
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
+
+        <!-- Header Section Begin -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="header__logo">
+                          
+                        </div>
+                    </div>
+                    {% block nav_b %}
+                    <div class="col-lg-10">
+                        <div class="header__nav">
+                            <nav class="header__menu mobile-menu">
+                                <ul>
+                                    <li class="active"><a href="{% url 'base'
+                                            %}"><i class="fa fa-tachometer"
+                                                aria-hidden="true"></i>&nbsp;Dashboard</a></li>
+                                   
+                                    <li><a href="{% url 'myprofile' %}"><i
+                                                class="fa fa-user"
+                                                aria-hidden="true"></i>&nbsp;My
+                                            Profile</a></li>
+                                    <li><a href="{% url 'log_out' %}"><i class="fa fa-sign-out"
+                                                aria-hidden="true"></i>&nbsp;Logout</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    {% endblock nav_b %}
+                </div>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+        </header>
+        <!-- Header End -->
+
+        <!-- Breadcrumb Begin -->
+
+        <!-- Breadcrumb End -->
+
+        <!-- Anime Section Begin -->
+        {% block content %}
+<center><h1 class="my-5 text-white" style="font-family: fantasy;">Dashboard</h1></center>
+
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                <div class="card h-blur">
+                    <h2 class=" my-3 mx-3">ShieldVerify</h2>       
+                                           <b><h4 class="m-3" style="color: rgb(0, 0, 0);">Our platform provides a secure and user-friendly two-factor authentication (2FA) solution for our users. We understand the importance of keeping your personal information safe and secure, and we strive to provide the highest level of security for our users.
+
+                        Our 2FA solution includes two methods of authentication - OTP (One-Time Password) and graphical password. With OTP, a unique code is sent to the user's registered mobile number, which must be entered along with their username and password during login. This helps to ensure that only authorized users have access to their accounts.
+                        
+                        In addition, we also offer graphical password authentication, which provides an extra layer of security. With this method, users must select four specific locations on a pre-selected picture during account setup. These locations are then used as the user's graphical password, and must be selected in the same order during login. This method ensures that even if someone obtains the user's username and password, they still cannot access the account without selecting the correct locations.
+                        
+                        At our platform, we are committed to providing our users with the highest level of security for their accounts, and we are constantly working to improve and update our security measures to stay ahead of the latest threats.</h4></b>
+                </div>
+             
+            </div>
+            </div>
+        </section>
+        {% endblock content %}
+        <!-- Anime Section End -->
+
+        <!-- Footer Section Begin -->
+        <footer class="footer">
+            <div class="page-up">
+                <a href="#" id="scrollToTopButton"><span
+                        class="arrow_carrot-up"></span></a>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer__logo">
+                            <a href="./index.html"><img src="" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="footer__nav">
+                            <ul>
+                                <li class="active"><a href="./index.html">Homepage</a></li>
+                                <li><a href="./categories.html">Categories</a></li>
+                                <li><a href="./blog.html">Our Blog</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                       </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+
+        <!-- Search model Begin -->
+        <div class="search-model">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="search-close-switch"><i class="icon_close"></i></div>
+                <form class="search-model-form">
+                    <input type="text" id="search-input" placeholder="Search
+                        here.....">
+                </form>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+        function validate(){
+          
+    
+          var image = document.myform.image
+          if (image.value.length == "") {
+            alert("Upload Image to Convert");
+            image.focus();
+            return false;
+            
+            }
+      
+            return true;
+          }
+            
+          </script>
+        <script>
+      /**
+   * Create an arrow function that will be called when an image is selected.
+   */
+  const previewImage = (event) => {
+      /**
+       * Get the selected files.
+       */
+      const imageFiles = event.target.files;
+      /**
+       * Count the number of files selected.
+       */
+      const imageFilesLength = imageFiles.length;
+      /**
+       * If at least one image is selected, then proceed to display the preview.
+       */
+      if (imageFilesLength > 0) {
+          /**
+           * Get the image path.
+           */
+          const imageSrc = URL.createObjectURL(imageFiles[0]);
+          /**
+           * Select the image preview element.
+           */
+          const imagePreviewElement = document.querySelector("#preview-selected-image");
+          /**
+           * Assign the path to the image preview element.
+           */
+          imagePreviewElement.src = imageSrc;
+          /**
+           * Show the element by changing the display value to "block".
+           */
+          imagePreviewElement.style.display = "block";
+      }
+  };
+  </script>
+        <!-- Search model end -->
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <script>swal({
+                title: "Success!",
+                text: "{{message}}",
+                icon: "success",
+                button: "OK",
+            });
+        </script>
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+        <script>swal({
+                title: "Warning :)",
+                text: "{{message}}",
+                icon: "warning",
+                button: "OK",
+             
+            });
+        </script>
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+        <script>swal({
+                title: "info :)",
+                text: "{{message}}",
+                icon: "info",
+                button: "OK",
+            });
+        </script>
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+        <script>swal({
+                title: "error :)",
+                text: "{{message}}",
+                icon: "error",
+                button: "OK",
+            });
+        </script>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        <!-- Js Plugins -->
+        <script>
+            $(".Click-here").on('click', function() {
+                $(".custom-model-main").addClass('model-open');
+              }); 
+              $(".close-btn, .bg-overlay").click(function(){
+                $(".custom-model-main").removeClass('model-open');
+              });
+        </script>
+        <script src="{% static 'user/js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'user/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'user/js/player.js' %}"></script>
+        <script src="{% static 'user/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'user/js/mixitup.min.js' %}"></script>
+        <script src="{% static 'user/js/jquery.slicknav.js' %}"></script>
+        <script src="{% static 'user/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'user/js/main.js' %}"></script>
+    </div>
+    
+    </body>
+
+</html>
