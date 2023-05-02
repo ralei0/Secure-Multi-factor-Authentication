@@ -5,3 +5,6 @@ Secure Multi-factor authentication is an essential security measure that adds an
 1. Clone this Repository.
 2. Open the terminal run "pip install -r requirements.txt" to install the required dependencies for this project.
 3. To run this project run "python manage.py runserver". With this command it connect you to the localhost and you can run the project.
+4. In settings.py file add your clients email id and a password form the google services.
+
+
