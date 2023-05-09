@@ -144,8 +144,8 @@ EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'Enter your Email Id here.'
-# EMAIL_HOST_PASSWORD = 'Here you need to enter your google apps passwords. If do not know then follow this process below'
+EMAIL_HOST_USER = 'Enter your Email Id here.'
+EMAIL_HOST_PASSWORD = 'Here you need to enter your google apps passwords. If do not know then follow this process below'
 
 """
 Steps to get password for Email host Password
